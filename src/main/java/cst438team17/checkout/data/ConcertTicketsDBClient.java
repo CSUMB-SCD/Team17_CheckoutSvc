@@ -9,9 +9,9 @@ import cst438team17.checkout.api.entities.ConcertTicket;;
 @Repository
 public class ConcertTicketsDBClient {
     public void setConcertTicketData(String id, ConcertTicket ticket) {
-        final String uri = "https://team17-ticketsdb.herokuapp.com/id" + id;
+        final String uri = "https://team17-ticketsdb.herokuapp.com/id/" + id;
         RestTemplate rt = new RestTemplate();
-        rt.put(uri, ticket);
+        rt.postForEntity(uri, ticket, Object.class);
     }
 
 }
