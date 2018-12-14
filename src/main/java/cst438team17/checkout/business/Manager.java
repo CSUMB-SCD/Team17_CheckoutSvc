@@ -16,7 +16,7 @@ public class Manager {
     @Autowired
     ConcertTicketsDBClient concertTicketsDBClient;
 
-    public void setConcertTicket(String id, @RequestBody ConcertTicket ticket) {
+    public void setConcertTicket(String id, ConcertTicket ticket) {
         concertTicketsDBClient.setConcertTicketData(id, ticket);
     }
 }
