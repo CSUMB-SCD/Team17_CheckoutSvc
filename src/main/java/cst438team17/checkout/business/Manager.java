@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import cst438team17.checkout.api.entities.ConcertTicket;
 import cst438team17.checkout.data.ConcertTicketsDBClient;
@@ -15,7 +16,7 @@ public class Manager {
     @Autowired
     ConcertTicketsDBClient concertTicketsDBClient;
 
-    public void setConcertTicket(String id, ConcertTicket ticket) {
+    public void setConcertTicket(String id, @RequestBody ConcertTicket ticket) {
         concertTicketsDBClient.setConcertTicketData(id, ticket);
     }
 }
