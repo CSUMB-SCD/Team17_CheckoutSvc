@@ -20,7 +20,7 @@ public class CheckoutController {
     @Autowired
     Manager manager;
 
-    @PostMapping ("/ConcertTickets/{id}")
+    @PutMapping ("/ConcertTickets/{id}")
     @ResponseBody
     @CrossOrigin(origins = "*")
     public void updateCustomer(@PathVariable("id") String id, @RequestBody ConcertTicket ticket) {
